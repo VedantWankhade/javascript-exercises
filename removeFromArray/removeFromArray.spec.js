@@ -1,25 +1,25 @@
 const removeFromArray = require('./removeFromArray')
 
 describe('removeFromArray', function() {
-  it('removes a single value', function() {
+  it('removes a single value in [1, 2, 3, 4], 3', function() {
     expect(removeFromArray([1, 2, 3, 4], 3)).toEqual([1, 2, 4]);
   });
-  xit('removes multiple values', function() {
+  it('removes multiple values [1, 2, 3, 4], 3, 2', function() {
     expect(removeFromArray([1, 2, 3, 4], 3, 2)).toEqual([1, 4]);
   });
-  xit('ignores non present values', function() {
+  it('ignores non present values [1, 2, 3, 4], 7, "tacos"', function() {
     expect(removeFromArray([1, 2, 3, 4], 7, "tacos")).toEqual([1, 2, 3, 4]);
   });
-  xit('ignores non present values, but still works', function() {
+  it('ignores non present values, but still works [1, 2, 3, 4], 7, 2', function() {
     expect(removeFromArray([1, 2, 3, 4], 7, 2)).toEqual([1, 3, 4]);
   });
-  xit('can remove all values', function() {
+  it('can remove all values [1, 2, 3, 4], 1, 2, 3, 4', function() {
     expect(removeFromArray([1, 2, 3, 4], 1, 2, 3, 4)).toEqual([]);
   });
-  xit('works with strings', function() {
+  it('works with strings ["hey", 2, 3, "ho"], "hey", 3', function() {
     expect(removeFromArray(["hey", 2, 3, "ho"], "hey", 3)).toEqual([2, "ho"]);
   });
-  xit('only removes same type', function() {
+  it('only removes same type [1, 2, 3], "1", 3', function() {
     expect(removeFromArray([1, 2, 3], "1", 3)).toEqual([1, 2]);
   });
 });
